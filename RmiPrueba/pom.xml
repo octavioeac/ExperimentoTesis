@@ -2,12 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.neural.net</groupId>
-  <artifactId>cliente</artifactId>
+  <artifactId>RmiPrueba</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>cliente Maven Webapp</name>
+  <name>RmiPrueba Maven Webapp</name>
   <url>http://maven.apache.org</url>
-   <properties>
+  
+  <properties>
 		<spring-version>3.2.4.RELEASE</spring-version>
 		<junit-version>4.9</junit-version>
 		<hsqldb-version>1.8.0.10</hsqldb-version>
@@ -48,6 +49,6 @@
 		
 		  </dependencies>
   <build>
-    <finalName>cliente</finalName>
+    <finalName>RmiPrueba</finalName>
   </build>
 </project>
