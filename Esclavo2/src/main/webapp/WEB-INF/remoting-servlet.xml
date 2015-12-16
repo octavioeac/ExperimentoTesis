@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+<bean id="calculationBean" class="com.javatpoint.CalculationImpl"></bean> 
+
+<bean name="/Calculation.http"   
+class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">  
+    <property name="service" ref="calculationBean"></property>  
+    <property name="serviceInterface" value="com.javatpoint.Calculation"></property>  
+</bean>  
+  
+  <bean id="holaBean" class="com.prueba1.prueba1Imp"></bean>
+  
+  <bean name="/Hola.http"
+  class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+  <property name="service" ref="holaBean"></property>
+  <property name="serviceInterface" value="com.prueba1.stringHola"></property>
+  </bean>
+  
+  
+  
+  
+  
+  
+
+  <bean id="mundo" class="com.prueba2.stringMundoImp"></bean>
+  
+  
+  
+  
+  
+  <bean name="/Mundo.http" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+  <property name="service" ref="mundo"></property>
+  <property name="serviceInterface" value="com.prueba2.stringMundo"></property>
+  </bean>
+  
+  
+</beans>

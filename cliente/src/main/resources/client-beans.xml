@@ -4,9 +4,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-<bean id="calculationBean" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">  
-<property name="serviceUrl" value="rmi://localhost:1099/CalculationService"></property>  
-<property name="serviceInterface" value="com.javatpoint.Calculation"></property>  
-</bean> 
+<bean id="holaBean"   
+class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    <property name="serviceUrl"   
+         value="http://localhost:8080/Esclavo2/Hola.http"></property>  
+    <property name="serviceInterface" value="com.prueba1.stringHola"></property>  
+</bean>  
+
+<bean id="MundoBean"   
+class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    <property name="serviceUrl"   
+         value="http://localhost:8080/Esclavo2/Mundo.http"></property>  
+    <property name="serviceInterface" value="com.prueba2.stringMundo"></property>  
+</bean>  
+
+
 
 </beans>
