@@ -18,6 +18,16 @@ class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
     <property name="serviceInterface" value="com.prueba2.stringMundo"></property>  
 </bean>  
 
+<bean id="objBean" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    <property name="serviceUrl" value="http://localhost:8080/Esclavo1/Objeto.http"></property>
+     <property name="serviceInterface" value="com.objetPrueba.servicioObjeto"></property>
+     <property name="httpInvokerRequestExecutor" ref="httpInvokerRequestExecuter" />
+</bean>
+
+
+
+<bean id="httpInvokerRequestExecuter" class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor" >
+</bean>
 
 
 </beans>

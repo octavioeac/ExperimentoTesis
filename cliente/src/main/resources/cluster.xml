@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+
+<bean name="clusterConfig" class="com.proemion.spring.clustering.ClusteringConfiguration">
+  <!-- put your interface here -->
+  <property name="serviceInterface" value="com.prueba1.stringHola" />
+  
+</bean>
+
+<!-- setup a round-robin service list with different uris/urls -->
+<bean name="serviceList" class="com.proemion.spring.clustering.algo.roundrobin.RoundRobinServiceList">
+  <!-- separate different URIs with spaces -->
+  <property name="serviceURIs" value="http://localhost:8080/Esclavo2/Hola.http " />
+</bean>                                                                                   
+
+<!-- setup a http invoker handler which does the normal spring remoting via http -->
+<bean name="protoHandler" class="com.proemion.spring.clustering.protocol.http.HttpInvokerHandler">
+  <property name="configuration" ref="clusterConfig"/>
+</bean>                                                                                   
+
+<!-- setup a paranoid failure handler (marks every failing service as "dead" for some time) -->
+<bean name="failHandler" class="com.proemion.spring.clustering.fail.ParanoidFailureHandler">
+  <property name="protocolHandler" ref="protoHandler"/>
+  <property name="serviceList" ref="serviceList"/>
+</bean>                                                                                   
+
+<!-- setup the final clustering bean -->
+<bean name="httpInvokerProxy" class="com.proemion.spring.clustering.RemoteClusteringProxyFactoryBean">   
+  <property name="configuration" ref="clusterConfig" />
+  <property name="serviceList" ref="serviceList" />                                        
+  <property name="failureHandler" ref="failHandler" />                                        
+  <property name="protocolHandler" ref="protoHandler" />                                        
+</bean>
+
+</beans>

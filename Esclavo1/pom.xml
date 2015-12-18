@@ -1,33 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.neural.net</groupId>
-  <artifactId>cliente</artifactId>
+  <groupId>www.neural.net</groupId>
+  <artifactId>Esclavo1</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>cliente Maven Webapp</name>
+  <name>Esclavo1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <properties>
+ <properties>
 		<spring-version>3.1.1.RELEASE</spring-version>
 		<spring-mvc-version>3.0.4.RELEASE</spring-mvc-version>
 		<junit-version>4.9</junit-version>
 		<hsqldb-version>1.8.0.10</hsqldb-version>
 	</properties>
-  
-  <repositories>
-  <repository>
-      <id>CLuster-Spring</id>
-      <name>your custom repo</name>
-      <url>http://spring-remoting-cluster.googlecode.com/svn/maven_repo/</url>
-  
-  </repository>
-  </repositories>
-  
-  
-  
-  
-  
-   
   
   
   <dependencies>
@@ -70,24 +55,18 @@
 			<version>${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
-	
-	  <!-- This is needed for the annotations -->
-	
-      <dependency>
+		
+		<dependency>
 	<groupId>commons-httpclient</groupId>
 	<artifactId>commons-httpclient</artifactId>
 	<version>3.1</version>
 </dependency>
-      
-      <!-- This is needed for the real clustering -->
-      <dependency>
-        <groupId>com.proemion.spring.cluster</groupId>
-        <artifactId>cluster-core</artifactId>
-        <version>0.2.1-M2</version>
-      </dependency>	
+		
+		
 		
 		  </dependencies>
+
   <build>
-    <finalName>cliente</finalName>
+    <finalName>Esclavo1</finalName>
   </build>
 </project>
